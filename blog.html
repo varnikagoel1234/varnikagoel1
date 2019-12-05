@@ -1,0 +1,26 @@
+---
+layout=default
+---
+<!doctype html>
+<html>
+<body>
+<p>Today I started learning about<br></p>
+<ol>
+<li> awk command. It is a mini programming language</li>
+</ol>
+I solved following questions-
+<br>
+Count word initial consonant sequences: tokenize by
+word, delete the vowel and the rest of the word, and
+count
+<br>
+<b>tr -sc 'A-Za-z' '\012' < genesis.txt | sed 's/[aeiouAEIOU].*//' | sed '/^$/d' | sort | wc -l</b>
+<br>
+Final consonant sequences
+<b> tr -sc 'A-Za-z' '\012' < genesis.txt | rev | sed 's/[aeiouAEIOU].*//' | rev | sed '/^$/d' | sort </b>
+<br>
+find vowel sequences that appear at least 10 times
+<b>tr -sc 'A-Za-z' '\012' < genesis |sed 's_[^AEIOUaeiou]_x_g'|tr -s 'x' '\012'|sort|uniq -c|awk '$1>10 {print}'</b>
+<p> then i moved on to learn about mutual information, entropy whose details will be presented in next blog </p>
+ </body>
+  </html>
